@@ -1,0 +1,123 @@
+{
+ "train_records": 396, 
+ "score_algo": "r2", 
+ "sample_output": "27.1", 
+ "name": "Predict Boston Housing", 
+ "tags": [
+  "regression"
+ ], 
+ "dataset_src": "http://www.google.com", 
+ "sample_input": "0.14455, 12.5, 7.87, \"0\", 0.524, 6.172, 96.1, 5.9505, \"5\", 311, 15.2, 396.9, 19.15", 
+ "train_size": 31911, 
+ "score": 0.91237428313779279, 
+ "features": 22, 
+ "owner": 0, 
+ "test_size": 8879, 
+ "test_records": 110, 
+ "id": "boston-housing", 
+ "columns": [
+  {
+   "max": 88.9762, 
+   "avg": 3.6135235573122535, 
+   "type": "numeric", 
+   "name": "Column 1", 
+   "min": 0.00906
+  }, 
+  {
+   "max": 100.0, 
+   "avg": 11.363636363636363, 
+   "type": "numeric", 
+   "name": "Column 2", 
+   "min": 0.0
+  }, 
+  {
+   "max": 27.74, 
+   "avg": 11.136778656126504, 
+   "type": "numeric", 
+   "name": "Column 3", 
+   "min": 0.46
+  }, 
+  {
+   "dict": [
+    "0", 
+    "1"
+   ], 
+   "multi": false, 
+   "type": "categorical", 
+   "name": "Column 4"
+  }, 
+  {
+   "max": 0.871, 
+   "avg": 0.5546950592885372, 
+   "type": "numeric", 
+   "name": "Column 5", 
+   "min": 0.385
+  }, 
+  {
+   "max": 8.78, 
+   "avg": 6.284634387351787, 
+   "type": "numeric", 
+   "name": "Column 6", 
+   "min": 3.561
+  }, 
+  {
+   "max": 100.0, 
+   "avg": 68.57490118577078, 
+   "type": "numeric", 
+   "name": "Column 7", 
+   "min": 2.9
+  }, 
+  {
+   "max": 12.1265, 
+   "avg": 3.795042687747034, 
+   "type": "numeric", 
+   "name": "Column 8", 
+   "min": 1.1296
+  }, 
+  {
+   "dict": [
+    "1", 
+    "2", 
+    "24", 
+    "3", 
+    "4", 
+    "5", 
+    "6", 
+    "7", 
+    "8"
+   ], 
+   "multi": false, 
+   "type": "categorical", 
+   "name": "Column 9"
+  }, 
+  {
+   "max": 711.0, 
+   "avg": 408.2371541501976, 
+   "type": "numeric", 
+   "name": "Column 10", 
+   "min": 187.0
+  }, 
+  {
+   "max": 22.0, 
+   "avg": 18.455533596837967, 
+   "type": "numeric", 
+   "name": "Column 11", 
+   "min": 12.6
+  }, 
+  {
+   "max": 396.9, 
+   "avg": 356.67403162055257, 
+   "type": "numeric", 
+   "name": "Column 12", 
+   "min": 0.32
+  }, 
+  {
+   "max": 37.97, 
+   "avg": 12.653063241106723, 
+   "type": "numeric", 
+   "name": "Column 13", 
+   "min": 1.73
+  }
+ ], 
+ "description": "Amazing predictor predicts boston houses"
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="simpleml.js"></script>
+    <script src="dense_vector.js"></script>
+    <script src="linear.js"></script>
+    <script src="model.js"></script>
+    <script src="murmur_hash.js"></script>
+    <script src="sparse_vector.js"></script>
+    <script src="variables.js"></script>
+    <script src="vectorizer.js"></script>
+    <script src="datastream.js"></script>
+    <script src="vector_ops.js"></script>
+    <script src="decision_tree.js"></script>
+    <script src="svm.js"></script>
+    <title>SimpleML test</title>
+</head>
+<body>
+
+<script>
+
+
+    function loadJSON(path, success, error)
+    {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function()
+        {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    if (success)
+                        success(JSON.parse(xhr.responseText));
+                } else {
+                    if (error)
+                        error(xhr);
+                }
+            }
+        };
+        xhr.open("GET", path, true);
+        xhr.send();
+    }
+
+
+    var sml = new SimpleML();
+    var callback = function() {
+        loadJSON('/SimpleML/boston-housing.test.json',
+                function(data) {
+                    var correct = 0, testLen = data.length;
+                    console.time('predict');
+                    for( var i = 0; i < testLen; i++ ) {
+                        var y_pred = sml.predict(data[i][1]), y_real = data[i][0];
+                        console.log(y_pred + " - " + y_real);
+                        if( y_pred == y_real )
+                            correct++;
+                        //else {
+                        //    console.log(data[i][0]);
+                        //}
+                    }
+                    console.timeEnd('predict');
+                    console.log("Correct: " + ( correct * 100 / testLen ) + "%");
+                },
+                function(xhr) { console.error(xhr); }
+        );
+    };
+
+    sml.loadModel('/SimpleML/boston-housing.model', callback );
+
+</script>
+
+<h1>SimpleML</h1>
+
+</body>
+</html>
